@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://bpq7sbt4aogqu" path="res://assets/images/UI/Buttons/bouton.png" id="20_cv6gj"]
 [ext_resource type="Texture2D" uid="uid://twilvk3sb7yt" path="res://assets/images/UI/Buttons/bouton survolé copie.png" id="21_a1ow7"]
 [ext_resource type="FontFile" uid="uid://bk7bqw4wkhru7" path="res://assets/fonts/Fogtwono5-ypyY.otf" id="22_qcpdj"]
+[ext_resource type="Texture2D" uid="uid://chrl72nfbndkx" path="res://assets/images/UI/LogoTitre.png" id="26_7wbet"]
 [ext_resource type="Script" uid="uid://dtekls8lecbh7" path="res://scripts/camera_physic.gd" id="26_qcpdj"]
 
 [node name="Menu_principal_affichage" type="Control" unique_id=843324627]
@@ -36,11 +37,9 @@ grow_vertical = 2
 script = ExtResource("1_80s3h")
 
 [node name="SFX_Click" type="FmodEventEmitter2D" parent="." unique_id=895922091]
-event_name = "event:/SFX_Click"
 event_guid = "{75044093-d973-4337-a742-2b536fde68ca}"
 
 [node name="SFX_Hover" type="FmodEventEmitter2D" parent="." unique_id=1786772623]
-event_name = "event:/SFX_Hover"
 event_guid = "{ec2cf21a-7dcb-43cc-803b-3788f3ce9b88}"
 
 [node name="ColorRect" type="Sprite2D" parent="." unique_id=1554242575]
@@ -66,6 +65,11 @@ theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
+
+[node name="LogoTitre" type="Sprite2D" parent="Menu_principal" unique_id=1080992153]
+position = Vector2(826, 399)
+scale = Vector2(0.4492461, 0.4492461)
+texture = ExtResource("26_7wbet")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Menu_principal" unique_id=264743259]
 layout_mode = 2
@@ -168,7 +172,6 @@ visible = false
 layout_mode = 1
 
 [node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=1024028361]
-event_name = "event:/Music_Menu_Start"
 event_guid = "{9eabc165-943e-44b3-bd3c-4610c6dc50ae}"
 autoplay = true
 
