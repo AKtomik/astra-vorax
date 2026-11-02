@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://qh1hrdmrf6ft"
+path="res://.godot/imported/unselect_Stars.mp3-98a6f6d4433a87b9e3448fee0a706903.mp3str"
+
+[deps]
+
+source_file="res://Audio Assets/SFX/unselect_Stars.mp3"
+dest_files=["res://.godot/imported/unselect_Stars.mp3-98a6f6d4433a87b9e3448fee0a706903.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

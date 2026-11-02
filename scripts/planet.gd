@@ -86,8 +86,6 @@ func join_constelation(planet_number: int):
 	shape_node.disabled = true
 	if (do_hover_emit_with_ray): link_ray_node.enabled = true
 	line_to(position)
-	$SFX_Select_Star.set_parameter("NumSelectedStars",planet_number)
-	$SFX_Select_Star.play()
 
 func constelation_link(next_planet: Planet):
 	is_last = false
@@ -111,9 +109,20 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 	if !(Input.is_action_just_pressed("left_click") && is_clickable): return
 	print("mouse click on planet ", self, "with event", event)
 	planet_clicked.emit(self)
+	play_audio_by_number
 
 
 func _on_mouse_entered() -> void:
 	if !do_hover_emit_with_mouse || !(Input.is_action_pressed("left_click") && is_clickable): return
 	print("mouse join planet", self)
 	planet_hovered.emit(self)
+	
+func play_audio_by_number(planet_number: int) -> void:
+	# On assemble textuellement le nom du clip (ex: "Audio" + "3" = "Audio3")
+	
+	var playlist: AudioStreamPlaylist = $SFX_Select_Star_Note.stream
+	var audio_name = "Select_Star_Note RESAMPLING-" + str(planet_number)
+	# On vérifie si ce nom existe dans notre liste
+	$SFX_Select_Star_Note.play(audio_name)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.

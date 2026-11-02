@@ -59,13 +59,12 @@ func _ready() -> void:
 @export var camera : Camera2D
 @export var planets_parent : Node2D
 @export var planet_scale : float = 1
-@export var SFX_Unselect_Star : FmodEventEmitter2D
+@export var SFX_Unselect_Star : AudioStreamPlayer2D
 @export var MainMusic : FmodEventEmitter2D
 
 #region planets generation
 func start_level() -> void :
 	create_constellation()
-	SystemeSon()
 	game_over = false
 
 ## Entrée : Rien |
@@ -75,7 +74,7 @@ func create_constellation() -> void :
 	if planets_amount > 2 :
 		timer.start(time_allowed)
 		current_time = time_allowed
-	planets_amount = planets_amount * 3/2
+		planets_amount = planets_amount * 3/2
 	if planets_amount > max_planets :
 		planets_amount = max_planets
 		if time_allowed > minimum_time :
@@ -180,11 +179,11 @@ func release_constelator():
 		for planet in linking_planets: planet.finish_constelation()
 		timer.stop()
 		Eat_Animation()
-		$SFX_Confirm_Alignment.set_parameter("NumSelectedStars",planets_amount - 4)
-		$SFX_Confirm_Alignment.play()
+		#$SFX_Confirm_Alignment.set_parameter("NumSelectedStars",planets_amount - 4)
+		#$SFX_Confirm_Alignment.play()
 	else:
 		print("failed linking ", linking_planets.size(), " planets")
-		SFX_Unselect_Star.play()
+		$SFX_Unselect_Star.play()
 		for planet in linking_planets: planet.cancel_constelation()
 	linking_planets = []
 	
@@ -235,28 +234,7 @@ func paused(val : bool):
 	timer.paused = val
 #endregion
 
-func SystemeSon() :
-	if current_level<2 :
-		MainMusic.set_parameter("Blackhole_Size",0.1)
-	elif current_level<4 :
-		MainMusic.set_parameter("Blackhole_Size",0.2)
-	elif current_level<6 :
-		MainMusic.set_parameter("Blackhole_Size",0.3)
-	elif current_level<8 :
-		MainMusic.set_parameter("Blackhole_Size",0.4)
-	elif current_level<9 :
-		MainMusic.set_parameter("Blackhole_Size",0.5)
-	elif current_level<10 :
-		MainMusic.set_parameter("Blackhole_Size",0.6)
-	elif current_level<12 :
-		MainMusic.set_parameter("Blackhole_Size",0.7)
-	elif current_level<13 :
-		MainMusic.set_parameter("Blackhole_Size",0.8)
-	elif current_level<15 : 
-		MainMusic.set_parameter("Blackhole_Size",0.9)
-	else :
-		MainMusic.set_parameter("Blackhole_Size",1)
-		$CameraPhysic/Camera2D/MUSIC.setparameter("Blackhole_Size",1)
+
 
 #region Animation
 

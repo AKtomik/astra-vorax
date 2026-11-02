@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d2ttnuiorns8d"
+path="res://.godot/imported/Select_Star_SFX_6.wav-b4aa778c6d1198394875ddc932c81561.sample"
+
+[deps]
+
+source_file="res://Audio Assets/SFX/Select_Star_UI/Select_Star_SFX_6.wav"
+dest_files=["res://.godot/imported/Select_Star_SFX_6.wav-b4aa778c6d1198394875ddc932c81561.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

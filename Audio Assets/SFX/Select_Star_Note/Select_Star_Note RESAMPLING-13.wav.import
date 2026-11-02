@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://djhkj8pc1dog3"
+path="res://.godot/imported/Select_Star_Note RESAMPLING-13.wav-120b208af3faea2819d78feae6f2d651.sample"
+
+[deps]
+
+source_file="res://Audio Assets/SFX/Select_Star_Note/Select_Star_Note RESAMPLING-13.wav"
+dest_files=["res://.godot/imported/Select_Star_Note RESAMPLING-13.wav-120b208af3faea2819d78feae6f2d651.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

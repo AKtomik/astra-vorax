@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bw5r7y7pbcd48" path="res://assets/images/chara/anim/2.png" id="4_iwk21"]
 [ext_resource type="Texture2D" uid="uid://cxb7u5ttin0oj" path="res://assets/images/chara/anim/bas/bas 1.png" id="5_en8di"]
 [ext_resource type="Shader" uid="uid://bdbu1y4owfjc0" path="res://scenes/elements/Bubble/space_scene.gdshader" id="6_en8di"]
+[ext_resource type="AudioStream" uid="uid://qh1hrdmrf6ft" path="res://Audio Assets/SFX/unselect_Stars.mp3" id="7_bxvao"]
+[ext_resource type="AudioStream" uid="uid://cb4m8564oiska" path="res://Audio Assets/SFX/SFX_Start_Game.mp3" id="7_en8di"]
 [ext_resource type="PackedScene" uid="uid://ne8vljrbvf4w" path="res://scenes/elements/planets/planet.tscn" id="10_j73lu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bxvao"]
@@ -77,18 +79,14 @@ _limits = [1.0, 2.5, 0.0, 10.0]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(3, 1), 0.0, 0.0, 0, 0, Vector2(6.5, 2.5), 0.0, 0.0, 0, 0, Vector2(10, 2.5), 0.0, 0.0, 0, 0]
 point_count = 4
 
-[node name="BlackHole" type="Node2D" unique_id=1995767824 node_paths=PackedStringArray("blackhole_head_sprite", "blackhole_body_sprite", "camera", "SFX_Unselect_Star", "MainMusic")]
+[node name="BlackHole" type="Node2D" unique_id=1995767824 node_paths=PackedStringArray("blackhole_head_sprite", "blackhole_body_sprite", "camera")]
 script = ExtResource("1_46ff3")
+planets_scenes = Array[PackedScene]([ExtResource("10_j73lu")])
+SFX_Unselect_Star = null
 blackhole_head_sprite = NodePath("Node2D/Sprite2D")
 blackhole_body_sprite = NodePath("Node2D/Corps")
-planets_scenes = Array[PackedScene]([ExtResource("10_j73lu")])
 camera = NodePath("CameraPhysic/Camera2D")
-SFX_Unselect_Star = NodePath("SFX_Unselect_Star")
-MainMusic = NodePath("CameraPhysic/Camera2D/MUSIC")
-
-[node name="SFX_Unselect_Star" type="FmodEventEmitter2D" parent="." unique_id=1549146915]
-event_name = "event:/SFX_Unselect_Star"
-event_guid = "{ff97faaa-4a10-4112-a04a-44fff835f78b}"
+MainMusic = null
 
 [node name="Node2D" type="Node2D" parent="." unique_id=120019941]
 scale = Vector2(0.5, 0.5)
@@ -122,26 +120,14 @@ growth_speed = 2.0
 
 [node name="Camera2D" type="Camera2D" parent="CameraPhysic" unique_id=716480409]
 
-[node name="MUSIC" type="FmodEventEmitter2D" parent="CameraPhysic/Camera2D" unique_id=198301037]
-event_name = "event:/Music"
-event_guid = "{6add997a-5166-47ea-a859-7ad7e5be7b8a}"
-autoplay = true
-fmod_parameters/Blackhole_Size/id = -8254653874567266056
-fmod_parameters/Blackhole_Size = 0.0
-fmod_parameters/Blackhole_Size/variant_type = 3
-fmod_parameters/EndGame/id = 8199282092914932788
-fmod_parameters/EndGame = 0
-fmod_parameters/EndGame/variant_type = 2
-
-[node name="FmodListener2D" type="FmodListener2D" parent="CameraPhysic/Camera2D" unique_id=1795883483]
-
 [node name="Timer" type="Timer" parent="." unique_id=1250517765]
 
-[node name="SFX_StartGame" type="FmodEventEmitter2D" parent="." unique_id=829198028]
-event_name = "event:/SFX_Start"
-event_guid = "{414bbb66-3fc7-4ca6-b18f-413a2f0db755}"
+[node name="SFX_Unselect_Star" type="AudioStreamPlayer2D" parent="." unique_id=429164751]
+stream = ExtResource("7_bxvao")
+volume_db = 4.015
+
+[node name="SFX_StartGame" type="AudioStreamPlayer2D" parent="." unique_id=830000834]
+stream = ExtResource("7_en8di")
 autoplay = true
-auto_release = true
-volume = 0.7
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

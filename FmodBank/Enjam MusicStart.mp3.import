@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c2qnw4niv44n2"
+path="res://.godot/imported/Enjam MusicStart.mp3-fc623787edcfde0015eb28d867b1e6b2.mp3str"
+
+[deps]
+
+source_file="res://FmodBank/Enjam MusicStart.mp3"
+dest_files=["res://.godot/imported/Enjam MusicStart.mp3-fc623787edcfde0015eb28d867b1e6b2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://bmwgfrd8butry"]
 
 [ext_resource type="Script" uid="uid://d0nyy5nelvkkd" path="res://scenes/UI/menu_principal/menu_principal.gd" id="1_80s3h"]
+[ext_resource type="AudioStream" uid="uid://cq25x3kaualpt" path="res://Audio Assets/SFX/menu_click_ding.mp3" id="2_150aa"]
 [ext_resource type="Script" uid="uid://mahecby4gi5a" path="res://scripts/parralax_manager.gd" id="2_a1ow7"]
 [ext_resource type="Texture2D" uid="uid://ck8jqhv8ui5tp" path="res://assets/images/BG/bg v1.png" id="2_qcpdj"]
+[ext_resource type="AudioStream" uid="uid://cio8x6xvxvog6" path="res://Audio Assets/SFX/menu_hover.mp3" id="3_a2vae"]
 [ext_resource type="PackedScene" uid="uid://cjgexcny30lkg" path="res://scenes/elements/parralax_layer.tscn" id="3_qcpdj"]
 [ext_resource type="Texture2D" uid="uid://cigkr0rsirh3g" path="res://assets/images/BG/Etoiles/A_01.png" id="4_7wbet"]
 [ext_resource type="Texture2D" uid="uid://dsa6pso4r5bxj" path="res://assets/images/BG/Etoiles/A_02.png" id="5_yrxmx"]
@@ -26,6 +28,7 @@
 [ext_resource type="FontFile" uid="uid://bk7bqw4wkhru7" path="res://assets/fonts/Fogtwono5-ypyY.otf" id="22_qcpdj"]
 [ext_resource type="Texture2D" uid="uid://chrl72nfbndkx" path="res://assets/images/UI/LogoTitre.png" id="26_7wbet"]
 [ext_resource type="Script" uid="uid://dtekls8lecbh7" path="res://scripts/camera_physic.gd" id="26_qcpdj"]
+[ext_resource type="AudioStream" uid="uid://dsu82en2nlraa" path="res://Audio Assets/Music/Enjam MusicStart.mp3" id="28_u0i68"]
 
 [node name="Menu_principal_affichage" type="Control" unique_id=843324627]
 layout_mode = 3
@@ -36,11 +39,13 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_80s3h")
 
-[node name="SFX_Click" type="FmodEventEmitter2D" parent="." unique_id=895922091]
-event_guid = "{75044093-d973-4337-a742-2b536fde68ca}"
+[node name="SFX_Click" type="AudioStreamPlayer2D" parent="." unique_id=322262112]
+stream = ExtResource("2_150aa")
+volume_db = 6.424
 
-[node name="SFX_Hover" type="FmodEventEmitter2D" parent="." unique_id=1786772623]
-event_guid = "{ec2cf21a-7dcb-43cc-803b-3788f3ce9b88}"
+[node name="SFX_Hover" type="AudioStreamPlayer2D" parent="." unique_id=69528882]
+stream = ExtResource("3_a2vae")
+volume_db = 19.725
 
 [node name="ColorRect" type="Sprite2D" parent="." unique_id=1554242575]
 position = Vector2(532, 324)
@@ -171,11 +176,8 @@ theme_override_constants/separation = -200
 visible = false
 layout_mode = 1
 
-[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=1024028361]
-event_guid = "{9eabc165-943e-44b3-bd3c-4610c6dc50ae}"
-autoplay = true
-
 [node name="MusiqueFond" type="AudioStreamPlayer" parent="." unique_id=848761638]
+stream = ExtResource("28_u0i68")
 autoplay = true
 bus = &"Music"
 
@@ -183,14 +185,10 @@ bus = &"Music"
 script = ExtResource("26_qcpdj")
 camera_attraction_toward_center = 40.0
 
+[node name="AudioListener2D" type="AudioListener2D" parent="CameraPhysic" unique_id=2019957684]
+
 [node name="Camera2D" type="Camera2D" parent="CameraPhysic" unique_id=1402372298]
 position = Vector2(640, 360)
-
-[node name="FmodListener2D" type="FmodListener2D" parent="CameraPhysic" unique_id=1616719071]
-is_locked = true
-
-[node name="FmodBankLoader" type="FmodBankLoader" parent="CameraPhysic" unique_id=409864624]
-bank_paths = ["res://FmodBank/Desktop/Master.strings.bank", "res://FmodBank/Desktop/Master.bank"]
 
 [connection signal="mouse_entered" from="Menu_principal/HBoxContainer/VBoxMainButton/play_button" to="." method="on_button_hover"]
 [connection signal="pressed" from="Menu_principal/HBoxContainer/VBoxMainButton/play_button" to="." method="_on_play_button_pressed"]
