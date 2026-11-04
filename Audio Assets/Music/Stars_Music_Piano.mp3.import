@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://22mc303xc4jh"
+path="res://.godot/imported/Stars_Music_Piano.mp3-7a25b25128e694c74c4c076c2ebae50d.mp3str"
+
+[deps]
+
+source_file="res://Audio Assets/Music/Stars_Music_Piano.mp3"
+dest_files=["res://.godot/imported/Stars_Music_Piano.mp3-7a25b25128e694c74c4c076c2ebae50d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

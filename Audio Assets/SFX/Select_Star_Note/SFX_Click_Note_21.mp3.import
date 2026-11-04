@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://hfalb4gp0ro"
+path="res://.godot/imported/SFX_Click_Note_21.mp3-13f1b1934a7bcda78afe166839fa2f01.mp3str"
+
+[deps]
+
+source_file="res://Audio Assets/SFX/Select_Star_Note/SFX_Click_Note_21.mp3"
+dest_files=["res://.godot/imported/SFX_Click_Note_21.mp3-13f1b1934a7bcda78afe166839fa2f01.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

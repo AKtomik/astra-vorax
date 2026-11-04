@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ccnbhxrq7urwf"
+path="res://.godot/imported/SFX_Confirm_Alignemnt-002.mp3-b7b6771ea21ff13f7fe3787fd4cb8970.mp3str"
+
+[deps]
+
+source_file="res://Audio Assets/SFX/Confirm_Alignment/SFX_Confirm_Alignemnt-002.mp3"
+dest_files=["res://.godot/imported/SFX_Confirm_Alignemnt-002.mp3-b7b6771ea21ff13f7fe3787fd4cb8970.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://jdrut3d48vj5"
+path="res://.godot/imported/Stars_Music_Strings.mp3-9f27c10d77f53f83fd5b6c1b03e0ac79.mp3str"
+
+[deps]
+
+source_file="res://Audio Assets/Music/Stars_Music_Strings.mp3"
+dest_files=["res://.godot/imported/Stars_Music_Strings.mp3-9f27c10d77f53f83fd5b6c1b03e0ac79.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

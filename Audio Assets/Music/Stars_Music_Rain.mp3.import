@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b0vmnxlm1nvnw"
+path="res://.godot/imported/Stars_Music_Rain.mp3-a87508cc6eee20a33d731ef6b15a956c.mp3str"
+
+[deps]
+
+source_file="res://Audio Assets/Music/Stars_Music_Rain.mp3"
+dest_files=["res://.godot/imported/Stars_Music_Rain.mp3-a87508cc6eee20a33d731ef6b15a956c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bm5s55ct7o33o"
+path="res://.godot/imported/Blackhole_Music_HeartCore.mp3-5b80e284731af04d9ca9e13957b5b0df.mp3str"
+
+[deps]
+
+source_file="res://Audio Assets/Music/Blackhole_Music_HeartCore.mp3"
+dest_files=["res://.godot/imported/Blackhole_Music_HeartCore.mp3-5b80e284731af04d9ca9e13957b5b0df.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

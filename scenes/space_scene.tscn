@@ -31,12 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://dr6sv1501qoyu" path="res://assets/images/BG/Etoiles/D_04.png" id="27_lrnks"]
 [ext_resource type="Script" uid="uid://b8gu6kyvxk7il" path="res://scenes/Confirm_Alignment_System.gd" id="30_2g33w"]
 [ext_resource type="AudioStream" uid="uid://qh1hrdmrf6ft" path="res://Audio Assets/SFX/unselect_Stars.mp3" id="31_muukt"]
-[ext_resource type="AudioStream" uid="uid://sagyqbrxb0rd" path="res://Audio Assets/Music/Blackhole_Music_HeartCore.wav" id="32_kkr1u"]
-[ext_resource type="AudioStream" uid="uid://dt3o4heosgq0y" path="res://Audio Assets/Music/Stars_Music_Arp.wav" id="33_lrnks"]
-[ext_resource type="AudioStream" uid="uid://ei01hb1r6oyb" path="res://Audio Assets/Music/Stars_Music_Piano.wav" id="34_xajoa"]
-[ext_resource type="AudioStream" uid="uid://cn0lft7kcqchk" path="res://Audio Assets/Music/Stars_Music_Rain.wav" id="35_v70c4"]
-[ext_resource type="AudioStream" uid="uid://ch6fm110qfcg4" path="res://Audio Assets/Music/Stars_Music_Stardust.wav" id="36_3fu4s"]
-[ext_resource type="AudioStream" uid="uid://bni2md0sj8fv5" path="res://Audio Assets/Music/Stars_Music_Strings.wav" id="37_e6fre"]
+[ext_resource type="Script" uid="uid://bvrgu6pi22r0a" path="res://scenes/audio_manager.gd" id="32_muukt"]
 
 [sub_resource type="Curve" id="Curve_bt6kb"]
 _limits = [0.0, 2.5, 0.0, 10.0]
@@ -136,29 +131,6 @@ radial_accel_max = -600.0
 radial_accel_curve = SubResource("CurveTexture_xyplr")
 scale_curve = SubResource("CurveTexture_kamhu")
 alpha_curve = SubResource("CurveTexture_66d1w")
-
-[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_8d685"]
-stream_count = 6
-stream_0/stream = ExtResource("32_kkr1u")
-stream_0/volume = -15.0
-stream_1/stream = ExtResource("33_lrnks")
-stream_1/volume = 0.0
-stream_2/stream = ExtResource("34_xajoa")
-stream_2/volume = 0.0
-stream_3/stream = ExtResource("35_v70c4")
-stream_3/volume = 0.0
-stream_4/stream = ExtResource("36_3fu4s")
-stream_4/volume = 0.0
-stream_5/stream = ExtResource("37_e6fre")
-stream_5/volume = 0.0
-
-[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_5fy32"]
-clip_count = 2
-clip_0/name = &"Stage1"
-clip_0/stream = SubResource("AudioStreamSynchronized_8d685")
-clip_0/auto_advance = 0
-clip_1/name = &"Stage2"
-clip_1/auto_advance = 0
 
 [node name="Space" type="Node2D" unique_id=1970641133]
 script = ExtResource("1_vu1g8")
@@ -329,12 +301,11 @@ script = ExtResource("30_2g33w")
 
 [node name="SFX_Unselect_Star" type="AudioStreamPlayer2D" parent="." unique_id=902255570]
 stream = ExtResource("31_muukt")
+volume_db = -6.0
 
-[node name="AudioManager" type="Node" parent="." unique_id=510753951]
-
-[node name="Music" type="AudioStreamPlayer" parent="AudioManager" unique_id=1444335105]
-stream = SubResource("AudioStreamInteractive_5fy32")
-autoplay = true
+[node name="AudioManager" type="Node" parent="." unique_id=510753951 node_paths=PackedStringArray("Music")]
+script = ExtResource("32_muukt")
+Music = NodePath("")
 
 [connection signal="exit_parametres" from="CanvasLayer/Menu_parametres" to="." method="on_exit_parametres"]
 [connection signal="pressed" from="CanvasLayer/Game_over/Button" to="." method="_on_button_pressed"]

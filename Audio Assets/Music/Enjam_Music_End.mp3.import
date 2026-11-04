@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bec380ld2x34b"
+path="res://.godot/imported/Enjam_Music_End.mp3-3251c07533111730092de7dd2dbe133d.mp3str"
+
+[deps]
+
+source_file="res://Audio Assets/Music/Enjam_Music_End.mp3"
+dest_files=["res://.godot/imported/Enjam_Music_End.mp3-3251c07533111730092de7dd2dbe133d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -51,6 +51,7 @@ func _process(delta: float) -> void:
 func _ready() -> void:
 	start_level()
 
+
 # GENERATION
 
 @export var planets_amount : int = 2
@@ -60,7 +61,7 @@ func _ready() -> void:
 @export var planets_parent : Node2D
 @export var planet_scale : float = 1
 @export var SFX_Unselect_Star : AudioStreamPlayer2D
-@export var MainMusic : FmodEventEmitter2D
+@export var MainMusic : AudioStreamPlayer
 
 #region planets generation
 func start_level() -> void :
@@ -74,7 +75,7 @@ func create_constellation() -> void :
 	if planets_amount > 2 :
 		timer.start(time_allowed)
 		current_time = time_allowed
-		planets_amount = planets_amount * 3/2
+	planets_amount = planets_amount * 3/2
 	if planets_amount > max_planets :
 		planets_amount = max_planets
 		if time_allowed > minimum_time :
@@ -179,8 +180,8 @@ func release_constelator():
 		for planet in linking_planets: planet.finish_constelation()
 		timer.stop()
 		Eat_Animation()
-		#$SFX_Confirm_Alignment.set_parameter("NumSelectedStars",planets_amount - 4)
-		#$SFX_Confirm_Alignment.play()
+		$SFX_Confirm_Alignment.get_stream_playback().switch_to_clip_by_name("Confirm"+ str(planets_amount))
+	
 	else:
 		print("failed linking ", linking_planets.size(), " planets")
 		$SFX_Unselect_Star.play()
@@ -198,7 +199,9 @@ func _on_timer_timeout() -> void:
 	animation_death_player.play("AnimationDeath")
 	print("Temps écoulé au niveau : ", current_level)
 	timeout.emit(current_level)
-	MainMusic.set_parameter("EndGame",1)
+	MainMusic.get_stream_playback().switch_to_clip_by_name("EndGame")
+	
+
 
 func check_for_blackhole_sprite_change() -> void :
 	var sprites_head = [
