@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://di4chlep1t1or"]
 
 [ext_resource type="Script" uid="uid://cuh87pj83e77l" path="res://scenes/UI/menu_pause/menu_parametres.gd" id="1_2rsun"]
+[ext_resource type="AudioStream" uid="uid://cq25x3kaualpt" path="res://Audio Assets/SFX/menu_click_ding.mp3" id="2_feui5"]
 [ext_resource type="PackedScene" uid="uid://d0ulsovtj84go" path="res://scenes/UI/menu_pause/tab_parametres.tscn" id="2_hg7gg"]
 [ext_resource type="FontFile" uid="uid://bk7bqw4wkhru7" path="res://assets/fonts/Fogtwono5-ypyY.otf" id="2_u4w4w"]
+[ext_resource type="AudioStream" uid="uid://cio8x6xvxvog6" path="res://Audio Assets/SFX/menu_hover.mp3" id="3_m1i3j"]
 [ext_resource type="Texture2D" uid="uid://bpq7sbt4aogqu" path="res://assets/images/UI/Buttons/bouton.png" id="4_u4w4w"]
 [ext_resource type="Texture2D" uid="uid://twilvk3sb7yt" path="res://assets/images/UI/Buttons/bouton survolé copie.png" id="5_d16fd"]
 
@@ -15,11 +17,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2rsun")
 
-[node name="SFX_Click" type="FmodEventEmitter2D" parent="." unique_id=1917238512]
-event_guid = "{75044093-d973-4337-a742-2b536fde68ca}"
+[node name="SFX_Click" type="AudioStreamPlayer2D" parent="." unique_id=1485667321]
+stream = ExtResource("2_feui5")
 
-[node name="SFX_Hover" type="FmodEventEmitter2D" parent="." unique_id=242558011]
-event_guid = "{ec2cf21a-7dcb-43cc-803b-3788f3ce9b88}"
+[node name="SFX_Hover" type="AudioStreamPlayer2D" parent="." unique_id=903467396]
+stream = ExtResource("3_m1i3j")
 
 [node name="TabContainer" type="MarginContainer" parent="." unique_id=1147720864]
 layout_mode = 1
