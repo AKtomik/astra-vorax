@@ -297,11 +297,13 @@ language = "fr_FR"
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1181101365]
 
 [node name="SFX_Confirm_Alignment" type="AudioStreamPlayer2D" parent="." unique_id=1646365357]
+bus = &"SFX"
 script = ExtResource("30_2g33w")
 
 [node name="SFX_Unselect_Star" type="AudioStreamPlayer2D" parent="." unique_id=902255570]
 stream = ExtResource("31_muukt")
 volume_db = -6.0
+bus = &"SFX"
 
 [node name="AudioManager" type="Node" parent="." unique_id=510753951]
 script = ExtResource("32_muukt")

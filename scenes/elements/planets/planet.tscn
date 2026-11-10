@@ -218,10 +218,12 @@ autoplay = &"spawn_planet"
 [node name="SFX_Select_Star_UI" type="AudioStreamPlayer2D" parent="." unique_id=227638715]
 stream = SubResource("AudioStreamRandomizer_vk2no")
 volume_db = -5.17
+bus = &"SFX"
 
 [node name="SFX_Select_Star_Note" type="AudioStreamPlayer2D" parent="." unique_id=466809064]
 stream = SubResource("AudioStreamInteractive_qnvlm")
 autoplay = true
+bus = &"SFX"
 script = ExtResource("20_473oj")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

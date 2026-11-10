@@ -19,9 +19,11 @@ script = ExtResource("1_2rsun")
 
 [node name="SFX_Click" type="AudioStreamPlayer2D" parent="." unique_id=1485667321]
 stream = ExtResource("2_feui5")
+bus = &"SFX"
 
 [node name="SFX_Hover" type="AudioStreamPlayer2D" parent="." unique_id=903467396]
 stream = ExtResource("3_m1i3j")
+bus = &"SFX"
 
 [node name="TabContainer" type="MarginContainer" parent="." unique_id=1147720864]
 layout_mode = 1

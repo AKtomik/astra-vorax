@@ -223,17 +223,21 @@ growth_speed = 2.0
 [node name="SFX_Unselect_Star" type="AudioStreamPlayer2D" parent="." unique_id=429164751]
 stream = ExtResource("7_bxvao")
 volume_db = 4.015
+bus = &"SFX"
 
 [node name="SFX_StartGame" type="AudioStreamPlayer2D" parent="." unique_id=830000834]
 stream = ExtResource("7_en8di")
 autoplay = true
+bus = &"SFX"
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=1634775151]
 stream = SubResource("AudioStreamInteractive_1iupu")
 autoplay = true
+bus = &"Music"
 
 [node name="SFX_Confirm_Alignment" type="AudioStreamPlayer" parent="." unique_id=1895905379]
 stream = SubResource("AudioStreamInteractive_tegy0")
 autoplay = true
+bus = &"SFX"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
